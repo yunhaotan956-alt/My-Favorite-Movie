@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favourite Movie - Avengers: Endgame</title>
+  <style>
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+    /* Reset & Variables */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --text-color: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent-gold: #fbbf24;
+      --accent-purple: #8b5cf6;
+      --accent-blue: #38bdf8;
+      --accent-red: #ef4444;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-bottom: 50px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Banner */
+    header {
+      background: linear-gradient(135deg, #1e1b4b, #431407, #7f1d1d);
+      text-align: center;
+      padding: 50px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      color: var(--text-color);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    /* Layout Grids */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    /* Styling Cards */
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Poster Section */
+    .poster-container {
+      text-align: center;
+    }
+
+    .poster-img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      margin-bottom: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Rating Badge */
+    .rating-badge {
+      display: inline-block;
+      background-color: var(--accent-gold);
+      color: #000;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 1rem;
+    }
+
+    /* Interactive Buttons */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: 15px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Character List */
+    .char-list {
+      list-style: none;
+    }
+
+    .char-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .char-list li:last-child {
+      border-bottom: none;
+    }
+
+    .char-name {
+      font-weight: 600;
+      color: var(--accent-gold);
+    }
+
+    /* Embedded Video Frame */
+    .video-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      border-radius: var(--radius);
+    }
+
+    .video-responsive iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: 0;
+    }
+
+    /* Specialized Feature Cards */
+    .highlight-card {
+      background: linear-gradient(135deg, #2e1065, #1e1b4b);
+      border-left: 5px solid var(--accent-purple);
+    }
+
+    .learn-card {
+      background: linear-gradient(135deg, #064e3b, #022c22);
+      border-left: 5px solid #10b981;
+    }
+
+    .about-me {
+      background: linear-gradient(135deg, #161b22, #0d1117);
+      border: 2px dashed var(--accent-blue);
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="container">
+      <h1>Avengers: Endgame</h1>
+      <p>My Favourite Movie Project</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Top Grid: Poster & Short Intro -->
+    <div class="grid">
+      <!-- Movie Poster Card -->
+      <div class="card poster-container">
+        <!-- 官方高清海报链接 -->
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Avengers Endgame Official Poster" class="poster-img">
+        <div>
+          <span class="rating-badge">★ Rating: 5 / 5</span>
+        </div>
+      </div>
+
+      <!-- Introduction Card -->
+      <div class="card">
+        <h2>🎬 Short Introduction</h2>
+        <p>Released in 2019, <strong>Avengers: Endgame</strong> is the massive final chapter of Marvel's 22-movie superhero saga. Directed by Anthony and Joe Russo, it brings together all the iconic Marvel heroes for one ultimate battle.</p>
+        <br>
+        <p>It set box office records around the world and delivered an unforgettable climax to over ten years of superhero storytelling!</p>
+        <a href="#trailer" class="btn">Watch Trailer Below</a>
+      </div>
+    </div>
+
+    <!-- Plot Summary Card -->
+    <div class="card" style="margin-bottom: 25px;">
+      <h2>📖 Plot Summary</h2>
+      <p>After the evil villain Thanos snapped his fingers and wiped out half of all living creatures in the universe, the surviving Avengers are left defeated and broken.</p>
+      <br>
+      <p>Five years later, Scott Lang (Ant-Man) discovers a way to travel through time using the Quantum Realm. The remaining heroes team up to travel back into past missions, collect the six powerful Infinity Stones, and undo the damage to bring back everyone who vanished.</p>
+    </div>
+
+    <!-- Middle Grid: Characters & Favourite Character -->
+    <div class="grid">
+      <!-- Main Characters -->
+      <div class="card">
+        <h2>👥 Main Characters</h2>
+        <ul class="char-list">
+          <li><span class="char-name">Tony Stark (Iron Man):</span> The genius inventor who leads the team.</li>
+          <li><span class="char-name">Steve Rogers (Captain America):</span> The brave leader who never gives up.</li>
+          <li><span class="char-name">Thor:</span> The powerful God of Thunder dealing with deep sadness.</li>
+          <li><span class="char-name">Thanos:</span> The dangerous galactic villain who stands in their way.</li>
+        </ul>
+      </div>
+
+      <!-- Favourite Character -->
+      <div class="card highlight-card">
+        <h2>⭐ Favourite Character</h2>
+        <p><strong>Iron Man (Tony Stark)</strong> is my favourite character because of his amazing story arc. He starts out as an arrogant billionaire, but ends up making the ultimate unselfish sacrifice to save the entire universe.</p>
+      </div>
+    </div>
+
+    <!-- Grid: Scene & Song -->
+    <div class="grid">
+      <!-- Favourite Scene -->
+      <div class="card">
+        <h2>⚡ Favourite Scene</h2>
+        <p>My favourite scene is when all the restored heroes step through magic portals to join the battle, and Captain America finally says the famous line: <strong>"Avengers... assemble!"</strong></p>
+      </div>
+
+      <!-- Music/Song -->
+      <div class="card">
+        <h2>🎵 Music & Soundtrack</h2>
+        <p>The soundtrack composed by <strong>Alan Silvestri</strong> is emotional and epic. The track <em>"Portals"</em> gives me goosebumps every single time I hear it play during the final battle.</p>
+      </div>
+    </div>
+
+    <!-- Grid: Personal Thoughts & Lessons -->
+    <div class="grid">
+      <!-- Why I Like This Movie -->
+      <div class="card">
+        <h2>❤️ Why I Like This Movie</h2>
+        <p>I love this movie because it delivers intense action, hilarious humor, and deep emotion. Seeing so many heroes unite after years of building their individual stories was pure magic.</p>
+      </div>
+
+      <!-- What I Learned -->
+      <div class="card learn-card">
+        <h2>💡 What I Learned</h2>
+        <p>The movie taught me that <strong>true bravery means facing failure</strong> and fighting for the people you love, even when the odds seem completely impossible.</p>
+      </div>
+    </div>
+
+    <!-- Movie Trailer Section -->
+    <div class="card" id="trailer" style="margin-bottom: 25px;">
+      <h2>🎥 Official Movie Trailer</h2>
+      <div class="video-responsive">
+        <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c" title="Avengers: Endgame Trailer" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="card about-me">
+      <h2>🙋‍♂️ About Me</h2>
+      <p><strong>Hi there!</strong> I am a secondary school student who loves movies, pop culture, and learning how to build modern websites.</p>
+      <p style="color: var(--text-muted); margin-top: 5px;">Created for my school HTML web design assignment.</p>
+    </div>
+
+  </main>
+
+</body>
+</html>
